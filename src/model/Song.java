@@ -1,20 +1,23 @@
 package model;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Objects;
 
 public class Song {
     private String title;
     private String identifier;
     private Duration duration;
-    private Date date;
+    private Calendar date;
     private String gender;
     private String picture;
     private String description;
 
-    public Song(String title, String identifier, String gender, String picture, String description, Duration duration) {
+    public Song(String title, String identifier, String gender, String picture, String description, Duration duration, int day, int month, int year) {
         this.title = title;
         this.identifier = identifier;
-        this.date = new Date();
+        this.date = new GregorianCalendar(day, month, year);
         this.gender = gender;
         this.picture = picture;
         this.description = description;
@@ -38,11 +41,11 @@ public class Song {
         this.identifier = identifier;
     }
 
-    public Date getDate() {
+    public Calendar getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Calendar date) {
         this.date = date;
     }
 
@@ -81,5 +84,26 @@ public class Song {
     @Override
     public String toString(){
         return title;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+
+        // If the object is compared with itself then return true
+        if (o == this) {
+            return true;
+        }
+
+        /* Check if o is an instance of Complex or not
+          "null instanceof [type]" also returns false */
+        if (!(o instanceof Song)) {
+            return false;
+        }
+
+        // typecast o to Complex so that we can compare data members
+        Song songToComparade = (Song) o;
+
+        // Compare the data members and return accordingly
+        return Objects.equals(songToComparade.title, this.title);
     }
 }
