@@ -1,0 +1,32 @@
+Clase Cancion
+-Titulo
+-Identificador //diferente a los demas
+-Fecha Descarga //podemos usar la clase time de java
+-Duracion
+-Genero
+-Caratula
+-Descripcion Corta
+
+*Constructor
+*Getters and Setters
+*****************************************************************
+Clase Biblioteca principal
+-Metodo para crear Playlist
+-Filtros mismo genero
+-Filtros mismo año
+-Por fecha
+-Por duracion
+
+*****************************************************************
+Clase duracion
+-Minutos
+-Segundos
+
+-Constructor
+-To String
+-Getter and setter
+
+
+
+
+8am mañana
